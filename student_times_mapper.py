@@ -21,7 +21,7 @@ from common import getField, isValidNodeLine
 def mapper():
     """Mapper function.
 
-    Input is read from sys.stdin and writter to sys.stdout. Both streams can be
+    Input is read from sys.stdin and written to sys.stdout. Both streams can be
     overwritten if needed.
 
     :returns: Nothing. Writes to standard output.
