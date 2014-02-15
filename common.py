@@ -4,7 +4,7 @@
 """Helper code for the Final Project of the "Intro to Hadoop and MapReduce"
 course.
 
-.. modeule:: common
+.. module:: common
 .. moduleauthor:: Renato L. F. Cunha <renato@renatocunha.com>
 """
 
