@@ -66,7 +66,7 @@ def reducer():
 
         if author != lastAuthor:
             if lastAuthor != '-1':
-                output(author, postHours)
+                output(lastAuthor, postHours)
                 postHours = emptyHours()
                 increment(postHours, hour)
             else:
