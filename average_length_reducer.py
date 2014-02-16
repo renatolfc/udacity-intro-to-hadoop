@@ -84,10 +84,7 @@ def output(node, nodeInfo):
 
 
 def emptyNodeInfo():
-    """@todo: Docstring for emptyNodeInfo.
-    :returns: @todo
-
-    """
+    'Returns a completely new node information "structure".'
     return [0] * 3
 
 
