@@ -69,7 +69,8 @@ def mapper():
     #   tag2 = 900
     # Now it would be able to reduce correctly and output the top 1 tag, tag2.
 
-    # We print everything we got.
+    # We print everything we got. Can be out of order, Hadoop will sort it for
+    # us.
     for tag in tagDict.items():
         print('%s\t%s' % tag)
 

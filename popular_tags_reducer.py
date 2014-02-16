@@ -88,14 +88,14 @@ def reducer():
             # info about it before. In other words, if this is the first tag,
             # there's no need to add anything to the heap yet.
             if lastTag is not None:
-                update(topN, lastTag, amount)
+                update(topN, lastTag, lastAmount)
                 lastAmount = 0
 
-        lastAmount += amount
         lastTag = tag
+        lastAmount += amount
 
     # We exited the loop with remaining state. Update it.
-    update(topN, lastTag, amount)
+    update(topN, lastTag, lastAmount)
 
     # And now we have our top 10 (in a bounded amount of memory! \o/)
     output(topN)
