@@ -45,6 +45,12 @@ def mapper():
         body = getField(line, 'body')
 
         # Data output, as announced by the comments above
+        # NOTE: We're assuming neither questions nor answers can be empty.
+        # We're hoping that the forum software prevented that from happening.
+        # The only reason this comment is made here is because it looks like,
+        # from the database dump, that empty values get filled with the "\N"
+        # string, which has a length of two. This could be improved, but
+        # I believe this happening would be quite unlikely.
         if nodeType == 'question':
             print('{0}\t{1}\t{2}'.format(node, QUESTION, len(body)))
         elif nodeType == 'answer':
