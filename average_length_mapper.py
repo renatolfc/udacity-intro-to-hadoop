@@ -44,6 +44,11 @@ def mapper():
         parent = getField(line, 'abs_parent_id')
         body = getField(line, 'body')
 
+        # If any of the fields we're interested in is None, then it is no good
+        # for us. Drop this line altogether.
+        if any(map(lambda x: x == None, (node, nodeType, parent, body))):
+            continue
+
         # Data output, as announced by the comments above
         # NOTE: We're assuming neither questions nor answers can be empty.
         # We're hoping that the forum software prevented that from happening.
