@@ -30,7 +30,7 @@ def getData(line):
     """
     data = line.strip().split('\t')
 
-    # Our mapper outputs two columns. Anything different than that can be
+    # Our mapper outputs three columns. Anything different than that can be
     # considered corrupt
     if len(data) != 3:
         return None
