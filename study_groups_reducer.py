@@ -5,7 +5,7 @@
 
 .. _Study Groups: https://www.udacity.com/course/viewer#!/c-ud617/l-717558831/m-730138597
 
-.. module:: student_times_reducer
+.. module:: study_groups_reducer
 .. moduleauthor:: Renato L. F. Cunha <renato@renatocunha.com>
 """
 
@@ -45,8 +45,7 @@ def output(thread, authors):
     """Outputs the information this reducer has consolidated.
 
     :thread: The thread id we're outputting information about.
-    :authors: The node's statistics: question length, total answer length and
-               amount of answers.
+    :authors: The list of authors that has contributed to this thread.
     :returns: None.
 
     """
@@ -60,13 +59,18 @@ def reducer():
 
     """
 
+    # Initialize the reducer. Authors hold the list of authors for the current
+    # thread.
     authors = []
+    # Holds the thread id (the node id of the question that originated this
+    # thread)
     lastThread = None
     for line in sys.stdin:
         data = getData(line)
         if data is None:
             continue
 
+        # Unpack our data. See `getData()`
         thread, newThread, author = data
 
         # The line we just read starts a new thread. We must output the
@@ -81,6 +85,7 @@ def reducer():
 
         lastThread = thread
 
+    # Leftover state from the loop
     output(lastThread, authors)
 
 
