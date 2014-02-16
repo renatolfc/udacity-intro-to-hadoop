@@ -17,6 +17,22 @@ from datetime import datetime
 
 from common import getField, isValidNodeLine
 
+def parseDate(dateRead):
+    """Parses the date we just read.
+
+    :dateRead: The date we read.
+    :returns: A datetime object representing the date we read.
+
+    """
+    if '.' in dateRead:
+        # Fractions of a second don't matter to us
+        date = dateRead.split('.')[0]
+
+    try:
+        return datetime.strptime(date, "%Y-%m-%d %H:%M:%S")
+    except ValueError:
+        return None
+
 
 def mapper():
     """Mapper function.
@@ -38,13 +54,11 @@ def mapper():
             continue
 
         author = getField(line, 'author_id')
-        date = getField(line, 'added_at')
+        date = parseDate(getField(line, 'added_at'))
 
-        if '.' in date:
-            # Fractions of a second don't matter to us
-            date = date.split('.')[0]
-
-        date = datetime.strptime(date, "%Y-%m-%d %H:%M:%S")
+        if date is None or author is None:
+            # Something's gone wrong. Ignore this line.
+            continue
 
         print('{0}\t{1}'.format(author, date.hour))
 
