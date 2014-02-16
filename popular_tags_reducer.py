@@ -14,6 +14,7 @@ from __future__ import print_function
 import sys
 import heapq
 
+# Constant that indicates the amount of tags we want to output
 TOP_N_TAGS = 10
 
 def getData(line):
