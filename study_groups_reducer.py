@@ -75,7 +75,14 @@ def reducer():
 
         # The line we just read starts a new thread. We must output the
         # information about the previous one before continuing.
-        if newThread:
+        if thread != lastThread:
+            # A weird thing can happen here. If the data from the database is
+            # inconsistent, we can have a question without an originating
+            # thread. What now? My take would be to ignore these altogether,
+            # but there is at least one thread (8001899) which has no question
+            # but has answers. Therefore, since we *do* have a parent id, we
+            # will print it.
+
             # No point in printing info about a thread that doesn't exist
             if lastThread is not None:
                 output(lastThread, authors)
