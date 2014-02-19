@@ -1,5 +1,5 @@
 ==================================================
-Final project for Udacity's Intro to Hadoop course
+  Intro to Hadoop and MapReduce: Final Project
 ==================================================
 
 :Authors:
@@ -41,13 +41,49 @@ following function:
         -mapper $1 -reducer $2 -file $1 -file $2 -file $3 -input $4 -output $5
     }
 
-With that function defined, running the code for the study groups would be
-like:
+Student times
+-------------
+
+With the `run_mapreduce_with_common()` function defined, running the code for the
+student times problem would be like:
+
+.. code:: bash
+
+    run_mapreduce_with_common student_times_mapper.py student_times_reducer.py \
+    common.py forum-input student-times-output
+
+Study groups
+------------
+
+With the `run_mapreduce_with_common()` function defined, running the code for the
+study groups problem would be like:
 
 .. code:: bash
 
     run_mapreduce_with_common study_groups_mapper.py study_groups_reducer.py \
     common.py forum-input study-groups-output
+
+Popular tags
+------------
+
+With the `run_mapreduce_with_common()` function defined, running the code for the
+popular tags problem would be like:
+
+.. code:: bash
+
+    run_mapreduce_with_common popular_tags_mapper.py popular_tags_reducer.py \
+    common.py forum-input popular-tags-output
+
+Average length
+--------------
+
+With the `run_mapreduce_with_common()` function defined, running the code for the
+average length problem would be like:
+
+.. code:: bash
+
+    run_mapreduce_with_common average_length_mapper.py average_length_reducer.py \
+    common.py forum-input average-length-output
 
 Answers to the final questions
 ==============================
