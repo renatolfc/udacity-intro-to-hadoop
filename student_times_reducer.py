@@ -102,8 +102,9 @@ def reducer():
             if lastAuthor != '-1':
                 output(lastAuthor, postHours)
                 postHours = emptyHours()
-            # Increment the counter for the current hour
-            increment(postHours, hour)
+
+        # Increment the counter for the current hour
+        increment(postHours, hour)
 
         lastAuthor = author
 
