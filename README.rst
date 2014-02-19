@@ -33,7 +33,8 @@ directory where MapReduce runs.
 Using Hadoop Stream with Cloudera's distribution, one could define the
 following function:
 
-.. code::
+.. code:: bash
+
     function run_mapreduce_with_common() {
         hadoop jar \
         /usr/lib/hadoop-0.20-mapreduce/contrib/streaming/hadoop-streaming-2.0.0-mr1-cdh4.1.1.jar \
@@ -43,7 +44,8 @@ following function:
 With that function defined, running the code for the study groups would be
 like:
 
-.. code::
+.. code:: bash
+
     run_mapreduce_with_common study_groups_mapper.py study_groups_reducer.py \
     common.py forum-input study-groups-output
 
