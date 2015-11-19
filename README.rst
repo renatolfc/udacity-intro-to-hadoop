@@ -3,7 +3,7 @@
 ==================================================
 
 :Authors:
-    Renato Luiz de Freitas Cunha <renato@renatocunha.com>
+    Renato L. F. Cunha
 
 Introduction
 ============
@@ -148,4 +148,3 @@ Correlation between question length and average response length
 There doesn't seem to be any, as shown in the figure below.
 
 .. image:: correlation.png
-
